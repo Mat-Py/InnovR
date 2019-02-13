@@ -1,0 +1,6 @@
+function c = polynomial_least_squares(A,b)
+%POLYNOMIAL_LEAST_SQUARES Summary of this function goes here
+%   Detailed explanation goes here
+c = A'
+end
+
