@@ -1,6 +1,10 @@
 function v = monomials2D(x,y, degree)
 %2D_MONOMS Summary of this function goes here
 %   Detailed explanation goes here
+if degree == 0 
+    v = [ones(length(x), 1)];
+    return
+end
 
 v = [ones(length(x), 1), x, y];
 id = 4;
