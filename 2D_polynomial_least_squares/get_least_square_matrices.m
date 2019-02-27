@@ -15,9 +15,9 @@ res = [100;100];
 dx_d = E(1, 2) - E(1, 1);
 hx_d = dx_d/res(1);
 x_d = (E(1, 1):hx_d:E(1, 2)-hx_d)';
-dy_d = E(1, 2) - E(1, 1);
+dy_d = E(2, 2) - E(2, 1);
 hy_d = dy_d/res(1);
-y_d = (E(1, 1):hy_d:E(1, 2)-hy_d)';
+y_d = (E(2, 1):hy_d:E(2, 2)-hy_d)';
 %Original function
 [X, Y] = meshgrid(x_d, y_d);
 F = f(X, Y);
