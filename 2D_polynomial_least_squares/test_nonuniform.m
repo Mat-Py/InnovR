@@ -2,15 +2,16 @@ close all;
 
 f = @peaks;
 E = [-3 3 ; -3 3];
-res = [100;100];
+res = [50;50];
 err_max = 0.01;
 deg_max = 2;
 t = get_sufficient_nonuniform_segmentation(f, E, err_max, res, deg_max);
 disp(t.tostring);
 
+res = [200;200];
 figure
 subplot(1, 2, 1);
-get_surf_from_tree(t);
+get_surf_from_tree(t, res);
 title("approx");
 view(3);
 
@@ -20,4 +21,6 @@ subplot(1, 2, 2);
 F = f(X, Y);
 surf(X, Y, F);
 title("original");
+
+% costs = costs_of_tree(t)
 

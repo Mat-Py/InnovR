@@ -1,6 +1,5 @@
-function get_surf_from_tree(t)
+function get_surf_from_tree(t, res)
 leaves = findleaves(t);
-res = [100, 100];
 E = t.get(1).E;
 dx = E(1, 2) - E(1, 1);
 dy = E(2, 2) - E(2, 1);
@@ -18,12 +17,7 @@ for leaf=leaves
     [x, y] = sampling_space(subE, subres);
     [X, Y] = meshgrid(x, y);
     
-    comb = (combvec(x', y'))';
-    cx_d = comb(:,1);
-    cy_d = comb(:,2);
-    deg = get_deg_from_n(length(content.alpha));
-    f_app_v = sum(content.alpha' .* monomials2D(cx_d, cy_d, deg), 2);
-    f_app = reshape(f_app_v, subres(1), subres(2))';
+    [f_app, ~, ~] = apply_poly_function(x, y, content.alpha);
     surf(X, Y, f_app);
 end
 hold off;
