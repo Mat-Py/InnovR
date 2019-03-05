@@ -3,8 +3,8 @@ close all;
 f = @peaks;
 E = [-3 3 ; -3 3];
 res = [50;50];
-err_max = 0.01;
-deg_max = 2;
+err_max = 0.001;
+deg_max = 4;
 t = get_sufficient_nonuniform_segmentation(f, E, err_max, res, deg_max);
 disp(t.tostring);
 
@@ -22,5 +22,5 @@ F = f(X, Y);
 surf(X, Y, F);
 title("original");
 
-% costs = costs_of_tree(t)
+costs = costs_of_tree(t)
 
