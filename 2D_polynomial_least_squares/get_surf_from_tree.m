@@ -18,7 +18,7 @@ for leaf=leaves
     [X, Y] = meshgrid(x, y);
     
     [f_app, ~, ~] = apply_poly_function(x, y, content.alpha);
-    surf(X, Y, f_app);
+    surf(X, Y, f_app, 'EdgeColor','None', 'facecolor', 'interp');
 end
 hold off;
 
