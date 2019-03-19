@@ -1,26 +1,10 @@
-function t = merge_segments(t)
-%UNTITLED7 Summary of this function goes here
+function c = merge_segments(c1,c2)
+%UNTITLED5 Summary of this function goes here
 %   Detailed explanation goes here
-%Operate only for nodes where all children are leaves
-
-if t.isleaf(1)
-    return
-end
-
-nonleaves = sum(arrayfun(@(c) 1- t.isleaf(c), t.getchildren(1)));
-
-if nonleaves > 0
-    for c=t.getchildren(t, 1)
-        st = merge_segments(t);
-        t = t.chop(c);
-        t = t.graft(st);
-    end
-else
-    for c1=t.getchildren(t, 1)
-        for c2=t.getchildren(t, 1)
-            if 1 % todo
-            end
-        end
-    end
+alpha = mean([c1.alpha' ; c2.alpha'])';
+E = [min(c1.E(1, 1), c2.E(1, 1)), max(c1.E(1, 2), c2.E(1, 2)) ; 
+     min(c1.E(2, 1), c2.E(2, 1)), max(c1.E(2, 2), c2.E(2, 2))];
+ 
+c = struct('E', E, 'alpha', alpha);
 end
 
