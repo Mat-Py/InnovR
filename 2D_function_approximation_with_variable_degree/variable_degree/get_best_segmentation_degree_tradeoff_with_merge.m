@@ -14,10 +14,9 @@ if depth_max >= 1
         for i=1:4
             subE = reshape(subEs(i,:), 2, [])';
             subt = get_best_segmentation_degree_tradeoff(f, subE, err_max, subres, deg_max, depth_max-1);
+            t = t.graft(1, subt);
         end
-        t = t.graft(1, subt);
         
-
     else
         costs_seg = 0;
         subres = round(res ./ 2);
@@ -49,7 +48,12 @@ if depth_max >= 1
                     err = get_mean_square_error(f, s.alpha, s.E, res);
                     if err <= err_max
                         to_remove = [to_remove, c1, c2];
+                        disp("On fusionne : ")
+                        s1.E
+                        s2.E
                         to_add = [to_add, s];
+                        disp("En : ")
+                        s.E
                     end
                 end
             end

@@ -3,7 +3,7 @@ close all;
 % f = @(x, y) abs(x);
 f = @peaks;
 % f = @funct;
-E = [-3 3 ; -3 3];
+E = [-3 3 ; -3 5];
 nb_pts_ls = [50;50];
 err_max = 0.01;
 deg_max = 10;
