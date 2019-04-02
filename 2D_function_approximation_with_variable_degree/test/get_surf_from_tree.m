@@ -21,4 +21,5 @@ for leaf=leaves
     surf(X, Y, f_app, 'EdgeColor','None', 'facecolor', 'interp');
 end
 hold off;
+view(3);
 
