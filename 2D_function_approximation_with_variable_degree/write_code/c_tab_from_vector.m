@@ -1,10 +1,11 @@
-function str = c_tab_from_vector(vector)
-%UNTITLED Summary of this function goes here
-%   Detailed explanation goes here
+function str = c_tab_from_vector(vector, varargin)
+if nargin == 2
+    commas = repmat(',\n', [length(vector), 1]);
+else
+    commas = repmat(', ', [length(vector), 1]);
+end
 str = num2str(vector');
-commas = repmat(', ', [length(vector), 1]);
 str = [str, commas]';
 str = str(:)';
-str = str(1:end-2);
 end
 
