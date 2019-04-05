@@ -1,7 +1,6 @@
 function subEs = split_space_in_four(E)
 %UNTITLED7 Summary of this function goes here
-%   Detailed explanation goes here    x_min = E(1, 1);
-
+%   Detailed explanation goes here
 x_min = E(1, 1);
 x_max = E(1, 2);
 x_h = (x_max-x_min)/2;

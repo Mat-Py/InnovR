@@ -1,17 +1,23 @@
 #include "tree.h"
 
-char id_leaf[N_NODES] = {
+const double E[2][2] = {/*E*/};
+
+const int id_leaf[N_NODES] = {
 /*ID_LEAF*/
 };
 
-char f_son[N_FATHERS] = {
+const int f_son[N_FATHERS] = {
 /*F_SON*/
 };
 
-char nb_coeffs[N_LEAVES] = {
-/*N_COEFFS_ARRAY*/
+const int id_coeffs[N_LEAVES] = {
+/*ID_COEFFS_ARRAY*/
 };
 
-double coeffs[N_COEFFS] = {
+const int deg[N_LEAVES] = {
+/*DEG*/
+};
+
+const double coeffs[N_COEFFS] = {
 /*COEFFS*/
 };

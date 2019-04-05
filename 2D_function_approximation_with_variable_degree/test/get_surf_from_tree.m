@@ -20,6 +20,8 @@ for leaf=leaves
     [f_app, ~, ~] = apply_poly_function(x, y, content.alpha);
     surf(X, Y, f_app, 'EdgeColor','None', 'facecolor', 'interp');
 end
+xlabel('x');
+ylabel('y');
 hold off;
 view(3);
 
