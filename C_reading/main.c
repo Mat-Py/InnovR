@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "tree.h"
+#include <stdlib.h>
 
 int get_n_from_deg(int deg)
 {
@@ -35,9 +36,50 @@ double evaluate(double x, double y)
 
     printf("%lf %lf %lf %lf\n", Es[0][0], Es[0][1], Es[1][0],  Es[1][1]);
 
-    char leaf = node;
+    char leaf = id_leaf[node];
     char degree = deg[leaf];
     double acc = 0;
+    const double* coeff = &coeffs[id_coeffs[leaf]];
+
+    printf("start coeff : %d\n", id_coeffs[leaf]);
+
+    int id_coeff = 0;
+
+    printf("%lf * %lf", coeff[id_coeff], 1.0);
+    acc += coeff[id_coeff++];
+    printf(" => acc = %lf\n", acc);
+
+    double *v[2] = {malloc(sizeof(double) * degree), malloc(sizeof(double) * degree)};
+    int v_id = 0;
+
+    if (degree >= 1) {
+        printf("%lf * %lf", coeff[id_coeff], x);
+        acc += coeff[id_coeff++] * x;
+        printf(" => acc = %lf\n", acc);
+        printf("%lf * %lf", coeff[id_coeff], y);
+        acc += coeff[id_coeff++] * y;
+        printf(" => acc = %lf\n", acc);
+
+        v[0][0] = x;
+        v[0][1] = y;
+        v_id = 1;
+
+        for (int depth = 3; depth <= degree + 1; depth++) {
+            for (int n = 0; n < depth; n++) {
+                if (n == 0) {
+                    v[(v_id)%2][n] = v[(v_id+1)%2][n] * x;
+                }
+
+                else
+                {
+                    v[(v_id)%2][n] = v[(v_id+1)%2][n-1] * y;
+                }
+                printf("%lf * %lf => acc = %lf\n", coeff[id_coeff], v[(v_id)%2][n], acc);
+                acc += coeff[id_coeff++] * v[(v_id)%2][n];
+                v_id++;
+            }
+        }
+    }
 
     return acc;
 }
