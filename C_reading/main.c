@@ -5,22 +5,16 @@
 #include <time.h>
 #include <stdint.h>
 
-int get_n_from_deg(int deg)
-{
-    int inter = 2*(deg+1)+1;
-    return (inter*inter - 1)/8;
-}
-
 double evaluate(double x, double y)
 {
-    char node = 0;
+    int node = 0;
     double Es[2][2] = {{E[0][0], E[0][1]},
                        {E[1][0], E[1][1]}};
     do
     {
         char son = 0;
-        double midx = (Es[0][1] + Es[0][0]) / 2;
-        double midy = (Es[1][1] + Es[1][0]) / 2;
+        double midx = (Es[0][1] + Es[0][0]) / 2.0;
+        double midy = (Es[1][1] + Es[1][0]) / 2.0;
 
         if (x > midx) {
             son += 1;
@@ -39,8 +33,8 @@ double evaluate(double x, double y)
         node = first_child[-id_leaf[node]] + son;
     }while(id_leaf[node] < 0);
 
-    char leaf = id_leaf[node];
-    char degree = deg[leaf];
+    int leaf = id_leaf[node];
+    int degree = deg[leaf];
     double acc = 0;
     const double* coeff = &coeffs[id_coeffs[leaf]];
 
@@ -48,7 +42,7 @@ double evaluate(double x, double y)
 
     acc += coeff[id_coeff++];
 
-    double *v[2] = {malloc(sizeof(double) * degree), malloc(sizeof(double) * degree)};
+    double v[2][MAX_DEGREE];
     int v_id = 0;
 
     if (degree >= 1) {
@@ -75,7 +69,6 @@ double evaluate(double x, double y)
             v_id++;
         }
     }
-
     return acc;
 }
 
@@ -94,7 +87,7 @@ int main() {
     clock_gettime(CLOCK_MONOTONIC_RAW, &start);
     for(int i = 0 ; i < N ; i++)
     {
-        evaluate(rand(), rand());
+        evaluate(6.0*(double)rand()/RAND_MAX-3.0, 6.0*(double)rand()/RAND_MAX-3.0);
     }
     clock_gettime(CLOCK_MONOTONIC_RAW, &end);
     delta_us = (end.tv_sec - start.tv_sec) * 1000000 + (end.tv_nsec - start.tv_nsec) / 1000;
@@ -105,7 +98,7 @@ int main() {
     clock_gettime(CLOCK_MONOTONIC_RAW, &start);
     for(int i = 0 ; i < N ; i++)
     {
-        peaks(rand(), rand());
+        peaks(6.0*(double)rand()/RAND_MAX-3.0, 6.0*(double)rand()/RAND_MAX-3.0);
     }
     clock_gettime(CLOCK_MONOTONIC_RAW, &end);
     delta_us = (end.tv_sec - start.tv_sec) * 1000000 + (end.tv_nsec - start.tv_nsec) / 1000;

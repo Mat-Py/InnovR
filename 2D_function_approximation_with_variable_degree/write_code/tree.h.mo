@@ -5,6 +5,7 @@
 #define N_FATHERS /*N_FATHERS*/
 #define N_COEFFS /*N_COEFFS*/
 #define N_NODES N_LEAVES + N_FATHERS
+#define MAX_DEGREE /*MAX_DEGREE*/
 
 const int id_leaf[N_NODES];
 const int first_child[N_FATHERS];

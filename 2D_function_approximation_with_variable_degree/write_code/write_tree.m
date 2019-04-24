@@ -51,6 +51,7 @@ model = fileread('tree.h.mo');
 model = strrep(model, '/*N_LEAVES*/', num2str(n_leaves));
 model = strrep(model, '/*N_FATHERS*/', num2str(n_fathers));
 model = strrep(model, '/*N_COEFFS*/', num2str(sum(id_coeffs)));
+model = strrep(model, '/*MAX_DEGREE*/', num2str(max(deg)));
 
 f = fopen('../C_reading/tree.h', 'w');
 fprintf(f, model);
