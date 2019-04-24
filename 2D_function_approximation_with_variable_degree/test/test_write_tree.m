@@ -1,4 +1,5 @@
 close all;
+clear all;
 
 % f = @(x, y) abs(x);
 f = @peaks;
@@ -6,7 +7,7 @@ f = @peaks;
 E = [-3 3 ; -3 3];
 nb_pts_ls = [50;50];
 err_max = 0.01;
-deg_max = 8;
+deg_max = 2;
 depth_max = 5;
 t = get_best_segmentation_degree_tradeoff(f, E, err_max, nb_pts_ls, deg_max, depth_max);
 write_tree(t);

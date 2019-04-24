@@ -1,6 +1,9 @@
 #include <stdio.h>
 #include "tree.h"
 #include <stdlib.h>
+#include <math.h>
+#include <time.h>
+#include <stdint.h>
 
 int get_n_from_deg(int deg)
 {
@@ -13,10 +16,12 @@ double evaluate(double x, double y)
     char node = 0;
     double Es[2][2] = {{E[0][0], E[0][1]},
                        {E[1][0], E[1][1]}};
-    do {
+    do
+    {
         char son = 0;
         double midx = (Es[0][1] + Es[0][0]) / 2;
         double midy = (Es[1][1] + Es[1][0]) / 2;
+
         if (x > midx) {
             son += 1;
             Es[0][0] = midx;
@@ -31,38 +36,29 @@ double evaluate(double x, double y)
         else
             Es[1][1] = midy;
 
-        node = f_son[-id_leaf[node]] + son;
+        node = first_child[-id_leaf[node]] + son;
     }while(id_leaf[node] < 0);
-
-    printf("%lf %lf %lf %lf\n", Es[0][0], Es[0][1], Es[1][0],  Es[1][1]);
 
     char leaf = id_leaf[node];
     char degree = deg[leaf];
     double acc = 0;
     const double* coeff = &coeffs[id_coeffs[leaf]];
 
-    printf("start coeff : %d\n", id_coeffs[leaf]);
-
     int id_coeff = 0;
 
-    printf("%lf * %lf", coeff[id_coeff], 1.0);
     acc += coeff[id_coeff++];
-    printf(" => acc = %lf\n", acc);
 
     double *v[2] = {malloc(sizeof(double) * degree), malloc(sizeof(double) * degree)};
     int v_id = 0;
 
     if (degree >= 1) {
-        printf("%lf * %lf", coeff[id_coeff], x);
         acc += coeff[id_coeff++] * x;
-        printf(" => acc = %lf\n", acc);
-        printf("%lf * %lf", coeff[id_coeff], y);
         acc += coeff[id_coeff++] * y;
-        printf(" => acc = %lf\n", acc);
 
-        v[0][0] = x;
-        v[0][1] = y;
-        v_id = 1;
+        v[0][0] = 1;
+        v[1][0] = x;
+        v[1][1] = y;
+        v_id = 2;
 
         for (int depth = 3; depth <= degree + 1; depth++) {
             for (int n = 0; n < depth; n++) {
@@ -70,23 +66,49 @@ double evaluate(double x, double y)
                     v[(v_id)%2][n] = v[(v_id+1)%2][n] * x;
                 }
 
-                else
-                {
+                else{
                     v[(v_id)%2][n] = v[(v_id+1)%2][n-1] * y;
                 }
-                printf("%lf * %lf => acc = %lf\n", coeff[id_coeff], v[(v_id)%2][n], acc);
+
                 acc += coeff[id_coeff++] * v[(v_id)%2][n];
-                v_id++;
             }
+            v_id++;
         }
     }
 
     return acc;
 }
 
+double peaks(double x, double y)
+{
+    return 3*pow((1-x), 2) *exp(-(pow(x, 2)) - pow((y+1),2)) - 10*(x/5 - pow(x,3) - pow(y,5))*exp(-x*x-pow(y,2)) - 1.0/3*exp(-pow((x+1),2) - pow(y, 2)) ;
+}
 
 int main() {
-    double x = -1, y = -1;
-    printf("%lf\n", evaluate(x, y));
+    struct timespec start, end;
+    uint64_t delta_us;
+    int N = 100000;
+
+    srand(time(NULL));
+    clock_gettime(CLOCK_MONOTONIC_RAW, &start);
+    for(int i = 0 ; i < N ; i++)
+    {
+        evaluate(rand(), rand());
+    }
+    clock_gettime(CLOCK_MONOTONIC_RAW, &end);
+    delta_us = (end.tv_sec - start.tv_sec) * 1000000 + (end.tv_nsec - start.tv_nsec) / 1000;
+    printf("time my method : %lu\n", delta_us);
+
+
+
+    clock_gettime(CLOCK_MONOTONIC_RAW, &start);
+    for(int i = 0 ; i < N ; i++)
+    {
+        peaks(rand(), rand());
+    }
+    clock_gettime(CLOCK_MONOTONIC_RAW, &end);
+    delta_us = (end.tv_sec - start.tv_sec) * 1000000 + (end.tv_nsec - start.tv_nsec) / 1000;
+    printf("time libmath: %lu\n", delta_us);
+
     return 0;
 }
