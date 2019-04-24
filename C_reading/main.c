@@ -81,7 +81,8 @@ double evaluate(double x, double y)
 
 double peaks(double x, double y)
 {
-    return 3*pow((1-x), 2) *exp(-(pow(x, 2)) - pow((y+1),2)) - 10*(x/5 - pow(x,3) - pow(y,5))*exp(-x*x-pow(y,2)) - 1.0/3*exp(-pow((x+1),2) - pow(y, 2)) ;
+    return 3*pow((1-x), 2) *exp(-(pow(x, 2)) - pow((y+1),2)) - 10*(x/5 - pow(x,3) - pow(y,5))*exp(-x*x-pow(y,2))
+    - 1.0/3*exp(-pow((x+1),2) - pow(y, 2));
 }
 
 int main() {
