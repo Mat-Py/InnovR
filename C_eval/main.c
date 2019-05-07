@@ -91,7 +91,7 @@ int mass_time_test(double (*funct)(double, double))
         }
     }
     clock_gettime(CLOCK_MONOTONIC_RAW, &end);
-    delta_us = (end.tv_nsec - start.tv_nsec) / 1000;
+    delta_us = (end.tv_nsec - start.tv_nsec);
     printf("time evaluate: %lu\n", delta_us);
 
 
@@ -103,7 +103,7 @@ int mass_time_test(double (*funct)(double, double))
         }
     }
     clock_gettime(CLOCK_MONOTONIC_RAW, &end);
-    delta_us = (end.tv_nsec - start.tv_nsec) / 1000;
+    delta_us = (end.tv_nsec - start.tv_nsec);
     printf("time libmath : %lu\n", delta_us);
 }
 
