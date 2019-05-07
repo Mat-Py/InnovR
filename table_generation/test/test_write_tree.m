@@ -7,7 +7,7 @@ f = @peaks;
 E = [-3 3 ; -3 3];
 nb_pts_ls = [100;100];
 err_max = 0.001;
-deg_max = 1;
+deg_max = 4;
 depth_max = 6;
 t = get_best_segmentation_degree_tradeoff(f, E, err_max, nb_pts_ls, deg_max, depth_max);
 write_tree(t, E);
