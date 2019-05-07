@@ -83,28 +83,22 @@ int mass_time_test(double (*funct)(double, double))
     uint64_t delta_us;
     int N = 1000;
 
-    clock_gettime(CLOCK_MONOTONIC_RAW, &start);
-    for(double x = E[0][0] ; x < E[0][1] ; x += (E[0][1] - E[0][0]) / (double)N)
-    {
-        for(double y = E[1][0] ; y < E[1][1] ; y += (E[1][1] - E[1][0]) / (double)N) {
+    clock_t begin = clock();
+    for(double x = E[0][0] ; x < E[0][1] ; x += (E[0][1] - E[0][0]) / (double)N) {
+        for (double y = E[1][0]; y < E[1][1]; y += (E[1][1] - E[1][0]) / (double) N) {
             evaluate(x, y);
         }
     }
-    clock_gettime(CLOCK_MONOTONIC_RAW, &end);
-    delta_us = (end.tv_nsec - start.tv_nsec);
-    printf("time evaluate: %lu\n", delta_us);
+    printf("time evaluate: %lu\n", (clock() - begin) * 1000/CLOCKS_PER_SEC);
 
 
-    clock_gettime(CLOCK_MONOTONIC_RAW, &start);
-    for(double x = E[0][0] ; x < E[0][1] ; x += (E[0][1] - E[0][0]) / (double)N)
-    {
-        for(double y = E[1][0] ; y < E[1][1] ; y += (E[1][1] - E[1][0]) / (double)N) {
-            funct(x, y);
+    begin = clock();
+    for(double x = E[0][0] ; x < E[0][1] ; x += (E[0][1] - E[0][0]) / (double)N) {
+        for (double y = E[1][0]; y < E[1][1]; y += (E[1][1] - E[1][0]) / (double) N) {
+            peaks(x, y);
         }
     }
-    clock_gettime(CLOCK_MONOTONIC_RAW, &end);
-    delta_us = (end.tv_nsec - start.tv_nsec);
-    printf("time libmath : %lu\n", delta_us);
+    printf("time libmath : %lu\n", (clock() - begin) * 1000/CLOCKS_PER_SEC);
 }
 
 
