@@ -1,11 +1,11 @@
 #ifndef TREE_H
 #define TREE_H
 
-#define N_LEAVES 16
-#define N_FATHERS 6
-#define N_COEFFS 2166
+#define N_LEAVES 4
+#define N_FATHERS 2
+#define N_COEFFS 550
 #define N_NODES N_LEAVES + N_FATHERS
-#define MAX_DEGREE 5
+#define MAX_DEGREE 9
 #define NB_BITS (unsigned int)1.585
 
 const int id_leaf[N_NODES];
