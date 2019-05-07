@@ -1,14 +1,14 @@
 close all;
 
 % f = @(x, y) abs(x);
-f = @atan2;
-% f = @peaks;
+%f = @atan2;
+f = @peaks;
 % f = @funct;
-E = [-2.1 3 ; -2.1 3];
-nb_pts_ls = [1000;1000];
+E = [-3 3 ; -3 3];
+nb_pts_ls = [100;100];
 err_max = 0.001;
-deg_max = 3;
-depth_max = 5;
+deg_max = 1;
+depth_max = 6;
 t = get_best_segmentation_degree_tradeoff(f, E, err_max, nb_pts_ls, deg_max, depth_max);
 write_tree(t, E);
 
