@@ -10,7 +10,6 @@ deg = get_deg_from_n(length(alpha));
 F = f(X, Y);
 
 %approximated function 
-
 [f_app, ~, ~] = apply_poly_function(x, y, alpha);
 
 err = mean2((f_app - F).^2);
