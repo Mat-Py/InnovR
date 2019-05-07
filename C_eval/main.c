@@ -79,17 +79,16 @@ double peaks(double x, double y)
 
 int mass_time_test(double (*funct)(double, double))
 {
-    srand(time(NULL));
     struct timespec start, end;
     uint64_t delta_us;
-    int N = 100000;
+    int N = 1000;
 
     clock_gettime(CLOCK_MONOTONIC_RAW, &start);
-    for(int i = 0 ; i < N ; i++)
+    for(int x = E[0][0] ; x < E[0][1] ; x += (E[0][1] - E[0][0]) / (double)N)
     {
-        double x = (E[0][1] - E[0][0])*(double)rand()/RAND_MAX -E[0][1];
-        double y = (E[1][1] - E[1][0])*(double)rand()/RAND_MAX -E[1][1];
-        evaluate(x, y);
+        for(int y = E[0][0] ; y < E[0][1] ; y += (E[0][1] - E[0][0]) / (double)N) {
+            evaluate(x, y);
+        }
     }
     clock_gettime(CLOCK_MONOTONIC_RAW, &end);
     delta_us = (end.tv_sec - start.tv_sec) * 1000000 + (end.tv_nsec - start.tv_nsec) / 1000;
@@ -97,11 +96,11 @@ int mass_time_test(double (*funct)(double, double))
 
 
     clock_gettime(CLOCK_MONOTONIC_RAW, &start);
-    for(int i = 0 ; i < N ; i++)
+    for(int x = E[0][0] ; x < E[0][1] ; x += (E[0][1] - E[0][0]) / (double)N)
     {
-        double x = (E[0][1] - E[0][0])*(double)rand()/RAND_MAX -E[0][1];
-        double y = (E[1][1] - E[1][0])*(double)rand()/RAND_MAX -E[1][1];
-        funct(x, y);
+        for(int y = E[0][0] ; y < E[0][1] ; y += (E[0][1] - E[0][0]) / (double)N) {
+            funct(x, y);
+        }
     }
     clock_gettime(CLOCK_MONOTONIC_RAW, &end);
     delta_us = (end.tv_sec - start.tv_sec) * 1000000 + (end.tv_nsec - start.tv_nsec) / 1000;
