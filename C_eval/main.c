@@ -96,9 +96,9 @@ int mass_time_test(double (*funct)(double, double))
 
 
     clock_gettime(CLOCK_MONOTONIC_RAW, &start);
-    for(int x = E[0][0] ; x < E[0][1] ; x += (E[0][1] - E[0][0]) / (double)N)
+    for(double x = E[0][0] ; x < E[0][1] ; x += (E[0][1] - E[0][0]) / (double)N)
     {
-        for(int y = E[0][0] ; y < E[0][1] ; y += (E[0][1] - E[0][0]) / (double)N) {
+        for(double y = E[1][0] ; y < E[1][1] ; y += (E[1][1] - E[1][0]) / (double)N) {
             funct(x, y);
         }
     }
