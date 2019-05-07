@@ -86,7 +86,10 @@ int mass_time_test(double (*funct)(double, double))
     clock_gettime(CLOCK_MONOTONIC_RAW, &start);
     for(int x = E[0][0] ; x < E[0][1] ; x += (E[0][1] - E[0][0]) / (double)N)
     {
+        printf("x = %lf\n", x);
         for(int y = E[0][0] ; y < E[0][1] ; y += (E[0][1] - E[0][0]) / (double)N) {
+
+            printf("y = %lf\n", y);
             evaluate(x, y);
         }
     }
