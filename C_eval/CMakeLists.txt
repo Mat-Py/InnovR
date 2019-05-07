@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.13)
+cmake_minimum_required(VERSION 3.0)
 project(C_reading C)
 
 set(CMAKE_C_STANDARD 99)
