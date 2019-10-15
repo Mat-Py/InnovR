@@ -1,0 +1,108 @@
+%% Creator: Inkscape inkscape 0.92.3, www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'tree_mapping.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \newcommand*\fsize{\dimexpr\f@size pt\relax}%
+  \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{366.87456161bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,0.81486285)%
+    \lineheight{1}%
+    \setlength\tabcolsep{0pt}%
+    \put(0.34317665,0.75680486){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}M : (x,y) ↦ \end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{tree_mapping.pdf}}%
+    \put(0.41615338,0.73093127){\color[rgb]{0,0,1}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}i\end{tabular}}}}%
+    \put(0.50581457,0.67885802){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.14881507\unitlength}\raggedright \textbf{1}\end{minipage}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{tree_mapping.pdf}}%
+    \put(0.39798557,0.5759607){\color[rgb]{0.78431373,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}xx\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=3]{tree_mapping.pdf}}%
+    \put(0.61335776,0.57968453){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}xy\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=4]{tree_mapping.pdf}}%
+    \put(0.52704256,0.58664642){\color[rgb]{0,0,1}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}1\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=5]{tree_mapping.pdf}}%
+    \put(0.23743763,0.40057487){\color[rgb]{0.78431373,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}xx\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=6]{tree_mapping.pdf}}%
+    \put(0.44258837,0.392617){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}xy\end{tabular}}}}%
+    \put(0.3423993,0.46480474){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\textbf{x}\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=7]{tree_mapping.pdf}}%
+    \put(0.36368219,0.41271943){\color[rgb]{0,0,1}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}2\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=8]{tree_mapping.pdf}}%
+    \put(0.75647988,0.4021768){\color[rgb]{0.78431373,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}xy\end{tabular}}}}%
+    \put(0.65431434,0.45777078){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\textbf{y}\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=9]{tree_mapping.pdf}}%
+    \put(0.67860236,0.40291044){\color[rgb]{0,0,1}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}3\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=10]{tree_mapping.pdf}}%
+    \put(0.06044816,0.20160768){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}xx\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=11]{tree_mapping.pdf}}%
+    \put(0.26851931,0.20095088){\color[rgb]{0.78431373,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}xy\end{tabular}}}}%
+    \put(0.16687004,0.26437734){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\textbf{x}\textbf{2}\end{tabular}}}}%
+    \put(-0.00253493,0.06119176){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\textbf{x}\textbf{3}\end{tabular}}}}%
+    \put(0.29070219,0.06738693){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\textbf{x}\textbf{2}\textbf{y}\end{tabular}}}}%
+    \put(0.9247638,0.06728312){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\textbf{y}\textbf{3}\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=12]{tree_mapping.pdf}}%
+    \put(0.02088385,0.00951838){\color[rgb]{0,0,1}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}7\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=13]{tree_mapping.pdf}}%
+    \put(0.34922684,0.00848582){\color[rgb]{0,0,1}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}8\end{tabular}}}}%
+    \put(0.62326649,0.0693482){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\textbf{xy}\textbf{2}\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=14]{tree_mapping.pdf}}%
+    \put(0.66311448,0.01468096){\color[rgb]{0,0,1}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}9\\\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=15]{tree_mapping.pdf}}%
+    \put(0.95944921,0.01468096){\color[rgb]{0,0,1}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}10\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=16]{tree_mapping.pdf}}%
+    \put(0.6174122,0.20041938){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}xy\end{tabular}}}}%
+    \put(0.49605633,0.26950957){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\textbf{xy}\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=17]{tree_mapping.pdf}}%
+    \put(0.53301631,0.21808843){\color[rgb]{0,0,1}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}5\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=18]{tree_mapping.pdf}}%
+    \put(0.89516147,0.21177717){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}xy\end{tabular}}}}%
+    \put(0.79445613,0.27467218){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\textbf{y}\textbf{2}\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=19]{tree_mapping.pdf}}%
+    \put(0.82212335,0.2201535){\color[rgb]{0,0,1}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}6\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=20]{tree_mapping.pdf}}%
+    \put(0.18851981,0.21381158){\color[rgb]{0,0,1}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}4\end{tabular}}}}%
+  \end{picture}%
+\endgroup%
